@@ -125,7 +125,11 @@ def make_reservation(site):
     elif raw_data.get('num_clusters'):
         resources = 'cluster={}/{}'.format(raw_data['num_clusters'], resources)
     data['resources'] = resources
-    print(data)
+    print("\n< summary: {}".format(data))
+    answer = input("> do you confirm the reservation? [Y/n] ")
+    if answer.lower() is not 'y' and answer.lower() is not 'yes':
+        print('* aborting...')
+        sys.exit()
     response = api('sites/{}/jobs'.format(site), r_type='post', headers={'Content-Type': 'application/json'}, data=data)
     if response.status_code == 201:
         print('success!')
