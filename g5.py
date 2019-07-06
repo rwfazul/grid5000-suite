@@ -92,7 +92,7 @@ def check_site_status(site, verbose=True):
             print('\t\tnumber of reservations: {} (waiting={}, running={})'.format(len(v.get('reservations')), reservations_waiting, reservations_running))
         if v.get('soft').strip() == 'free' or v.get('soft').strip() == 'unknown':
             free_nodes.append(format(k))
-    print('*** Free nodes founded on site {} (total={})'.format(site, len(free_nodes)))
+    print('*** free nodes founded on site {} (total={})'.format(site, len(free_nodes)))
     if verbose:
         for node in free_nodes:
             print('\t{}'.format(node))
