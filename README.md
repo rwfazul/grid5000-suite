@@ -2,7 +2,7 @@
 
 A simple wrapper for the GRID'5000 RESTful API that allows OAR reservations and job management. 
 
-### Requirements
+## Requirements
 
 - Python 3+
 - Requests library
@@ -11,7 +11,7 @@ A simple wrapper for the GRID'5000 RESTful API that allows OAR reservations and 
 	$ pip install requests
 ```
 
-### Configuration
+## Configuration
 
 - Add the following entry in the ~/.netrc file:
 
@@ -27,7 +27,7 @@ A simple wrapper for the GRID'5000 RESTful API that allows OAR reservations and 
 	$ chmod 600 ~/.netrc
 ```
 
-### Usage
+## Usage
 
 ```
 usage: g5.py [-h] [--list_sites] [--list_clusters SITE_NAME]
@@ -53,6 +53,6 @@ optional arguments:
                         cancel a reservation or delete a job
 ```
 
-### experiments
+## experiments
 
 In the experiments folder you will find some useful shell scripts to Hadoop build and benchmarks on GRID'5000 (w/ hg5k project).
