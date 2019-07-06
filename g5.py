@@ -21,7 +21,7 @@ def api(subpath, r_type='get', headers=None, data=None):
             print('\t\tmachine api.grid5000.fr')
             print('\t\tlogin <your-grid5000-login>')
             print('\t\tpassword <your-grid5000-password>')
-            print('\t** if the file not exists, you should also run the following command: $ chmod 600 ~/.netrc ')
+            print('\t** if you have to create the .netrc file, also run the following command: $ chmod 600 ~/.netrc ')
             sys.exit(1)
         if r_type is 'get':
             return json.loads(response.text)
@@ -183,7 +183,7 @@ def delete_job(site, job_id):
         print(response.text)
 
 def main():
-    parser = argparse.ArgumentParser(description="A python wrapper for GRID'5000 RESTful API")
+    parser = argparse.ArgumentParser(description="A simple Python wrapper for GRID'5000 RESTful API")
     parser.add_argument('--list_sites', action="store_true", help='list all GRID\'5000 sites')
     parser.add_argument('--list_clusters', help='list all clusters in the given site', metavar=('SITE_NAME'))
     parser.add_argument('--list_nodes', nargs=2, help='list all nodes in the given site and cluster', metavar=('SITE_NAME', 'CLUSTER_NAME'))
