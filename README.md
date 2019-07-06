@@ -1,6 +1,6 @@
 # grid5000-suite
 
-A simple wrapper for the GRID'5000 API that allows OAR reservations and job management. 
+A simple wrapper for the GRID'5000 RESTful API that allows OAR reservations and job management. 
 
 ### Requirements
 
@@ -35,7 +35,7 @@ usage: g5.py [-h] [--list_sites] [--list_clusters SITE_NAME]
              [--verbose] [--grid_status] [--sub SITE_NAME]
              [--cancel SITE_NAME JOB_ID]
 
-A Python wrapper for GRID'5000 RESTful API
+A simple Python wrapper for GRID'5000 RESTful API
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -52,3 +52,7 @@ optional arguments:
   --cancel SITE_NAME JOB_ID
                         cancel a reservation or delete a job
 ```
+
+### experiments
+
+In the experiments folder you will find some useful shell scripts to Hadoop build and benchmarks on GRID'5000 (w/ hg5k project).
