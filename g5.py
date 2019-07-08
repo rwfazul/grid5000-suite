@@ -148,13 +148,8 @@ def get_parameters(site):
     }
     clusters = list_site_clusters(site, clusters_list=True)
     print('< available clusters in {}: {}'.format(site, clusters))
-    walltime = input('> walltime (hh:mm) (default=1): ')
-    if walltime.strip():
-        data['walltime'] = walltime
-    num_nodes = input('> number of nodes (default=1): ')
-    if num_nodes.strip():
-        data['num_nodes'] = num_nodes
     repeat=True
+    multiple_clusters=False
     while repeat:
         cluster = input('> cluster name (optional): ')
         if cluster.strip():
@@ -169,6 +164,13 @@ def get_parameters(site):
         num_clusters = input('> number of clusters (optional): ')
         if num_clusters.strip():
             data['num_clusters'] = num_clusters
+            multiple_clusters=True
+    num_nodes = input('> number of {} (default=1): '.format('nodes per cluster' if multiple_clusters else 'nodes'))
+    if num_nodes.strip():
+        data['num_nodes'] = num_nodes
+    walltime = input('> walltime (hh:mm) (default=1): ')
+    if walltime.strip():
+        data['walltime'] = walltime
     start_at = input('> start at [GMT+2, FR] (yyyy-dd-mm hh:mm:ss) (default=as soon as possible): ')
     if start_at.strip():
         data['start_at'] = start_at
