@@ -127,7 +127,7 @@ def make_reservation(site):
     data['resources'] = resources
     print("\n< summary: {}".format(data))
     answer = input("> do you confirm the reservation? [Y/n] ")
-    if answer.lower() is not 'y' and answer.lower() is not 'yes':
+    if answer.lower() != 'y' and answer.lower() != 'yes':
         print('* aborting...')
         sys.exit()
     response = api('sites/{}/jobs'.format(site), r_type='post', headers={'Content-Type': 'application/json'}, data=data)
